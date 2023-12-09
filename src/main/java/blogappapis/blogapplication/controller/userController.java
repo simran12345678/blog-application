@@ -3,6 +3,7 @@ package blogappapis.blogapplication.controller;
 import blogappapis.blogapplication.payloads.apiResponse;
 import blogappapis.blogapplication.payloads.userDTO;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class userController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<userDTO> createUser(@RequestBody userDTO userDTO1){
+    public ResponseEntity<userDTO> createUser(@Valid @RequestBody userDTO userDTO1){
         userDTO userDTO2=this.userService.createUser(userDTO1);
         return new ResponseEntity<>(userDTO2, HttpStatus.CREATED);
     }
@@ -36,7 +37,7 @@ public class userController {
     }
 
     @PatchMapping("/update/{userId}")
-    public ResponseEntity<userDTO> updateUser(@RequestBody userDTO userDTO,@PathVariable Integer userId){
+    public ResponseEntity<userDTO> updateUser(@Valid @RequestBody userDTO userDTO,@PathVariable Integer userId){
         userDTO userDTO1=this.userService.updateUser(userDTO,userId);
         return ResponseEntity.ok(userDTO1);
     }
