@@ -1,7 +1,6 @@
 package blogappapis.blogapplication.controller;
 
 import blogappapis.blogapplication.payloads.apiResponse;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

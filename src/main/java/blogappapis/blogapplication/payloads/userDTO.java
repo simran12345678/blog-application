@@ -1,9 +1,14 @@
 package blogappapis.blogapplication.payloads;
-
+//
+//import blogappapis.blogapplication.entity.Comment;
+//import blogappapis.blogapplication.entity.Post;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -24,4 +29,7 @@ public class userDTO {
 
     @NotEmpty
     private String about;
+
+    private List<postDTO> posts=new ArrayList<>();
+
 }
